@@ -5,75 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Matías Rosner | Resume</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    :root {
+      --primary: #0074cc;
+      --light-bg: #f4f4f4;
+      --card-bg: #ffffff;
+      --text: #333;
+      --accent: #444;
+      --gray: #777;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text);
       line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
     }
 
     header {
-      background-color: #222;
-      color: #fff;
-      padding: 20px 40px;
+      background-color: var(--accent);
+      color: white;
+      padding: 30px 20px;
       text-align: center;
     }
 
     header h1 {
-      margin: 0;
+      font-size: 2.5em;
+      margin-bottom: 5px;
     }
 
     header p {
-      margin: 5px 0;
+      margin: 4px 0;
       font-size: 0.95em;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     main {
       max-width: 900px;
-      margin: 20px auto;
-      padding: 0 20px;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      padding: 30px;
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
     }
 
     section {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     h2 {
-      border-bottom: 2px solid #333;
+      border-bottom: 2px solid var(--accent);
+      font-size: 1.4em;
+      margin-bottom: 15px;
       padding-bottom: 5px;
+      color: var(--accent);
     }
 
-    .job, .edu, .proj {
-      margin-bottom: 20px;
+    .edu, .job {
+      margin-bottom: 25px;
     }
 
-    .job h3, .edu h3, .proj h3 {
-      margin: 0;
+    .edu h3, .job h3 {
+      font-size: 1.15em;
+      margin-bottom: 4px;
+      color: var(--text);
     }
 
-    .job span, .edu span {
-      font-size: 0.9em;
-      color: #666;
-    }
+    .edu span {
+        font-size: 1em;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+    .job span {
+        font-size: 0.97em;
+        color: #444;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 0.3px;
+        display: block;
+        margin-bottom: 10px;
+      }
 
     ul {
-      margin-top: 5px;
       padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
     }
 
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.85em;
-      color: #777;
+      color: var(--gray);
+      margin-top: 20px;
     }
 
-    a {
-      color: #0074cc;
+    @media (max-width: 600px) {
+      main {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
     }
   </style>
 </head>
@@ -94,11 +148,11 @@
       <h2>Education</h2>
       <div class="edu">
         <h3>Carnegie Mellon University</h3>
-        <span>Master of Science in Information Security Policy & Management — May 2021 — GPA: 3.9</span>
+        <span>Master of Science in Information Security Policy & Management | May 2021 | Pittsburgh, PA | GPA: 3.9</span>
       </div>
       <div class="edu">
         <h3>University of Puerto Rico - Rio Piedras Campus</h3>
-        <span>Bachelor of Science in Computer Science — May 2019 — GPA: 3.6</span>
+        <span>Bachelor of Science in Computer Science | May 2019 | San Juan, PR | GPA: 3.6</span>
       </div>
     </section>
 
@@ -106,7 +160,7 @@
       <h2>Experience</h2>
       <div class="job">
         <h3>Fortune 100 Healthcare Company (via Cognizant)</h3>
-        <span>Python Back-End Developer — Mar 2025 – Present — Remote</span>
+        <span>Python Back-End Developer | Mar 2025 – Present | Remote</span>
         <ul>
           <li>Developing secure, scalable Python web applications serving Medicare providers across the United States.</li>
         </ul>
@@ -114,7 +168,7 @@
 
       <div class="job">
         <h3>Self-employed</h3>
-        <span>Computer Science Tutor & Freelance Developer — Oct 2023 – Feb 2025 — Springfield, VA</span>
+        <span>Computer Science Tutor & Freelance Developer | Oct 2023 – Feb 2025 | Springfield, VA</span>
         <ul>
           <li>Tutored students in data structures, algorithms, ML, networks, and cybersecurity.</li>
           <li>Developed and deployed full-stack web applications using Docker containers for security and process isolation. (FastAPI/Quart/Flask, MySQL/Postgres, HTML/CSS/JS, VPS)</li>
@@ -123,26 +177,25 @@
 
       <div class="job">
         <h3>National Science Foundation - OIG</h3>
-        <span>IT Specialist - Information Security (INFOSEC) — Jul 2021 – Sep 2023 — Alexandria, VA</span>
+        <span>IT Specialist - Information Security (INFOSEC) | Jul 2021 – Sep 2023 | Alexandria, VA</span>
         <ul>
           <li>Performed security audits and developed Python apps for NSF and US Antarctic Program.</li>
-          <li>Created travel-based anomaly network detection systems, which identified employees working from high risk or unauthorized locations while handling sensitive equipment.</li>
+          <li>Created travel-based anomaly network detection systems, which identified employees working from high-risk or unauthorized locations while handling sensitive equipment.</li>
           <li>Automated the identification pipeline for high-risk grant awardees, reducing processing time from one month to one day—a 96.7% efficiency improvement.</li>
-        </li>
         </ul>
       </div>
 
       <div class="job">
         <h3>Carnegie Mellon Univ. - Entrepreneurship Competition</h3>
-        <span>Intern — Jun 2020 – Aug 2020 — Pittsburgh, PA</span>
+        <span>Intern | Jun 2020 – Aug 2020 | Pittsburgh, PA</span>
         <ul>
-          <li>Won 1st place with an ML-based IDS identifying stylometric code authorship,  which distinguished unknown threat actors from authorized code authors (85% accuracy).</li>
+          <li>Won 1st place with an ML-based IDS identifying stylometric code authorship, which distinguished unknown threat actors from authorized code authors (85% accuracy).</li>
         </ul>
       </div>
 
       <div class="job">
         <h3>Brookhaven National Laboratory</h3>
-        <span>Machine Learning Intern — Jun 2019 – Aug 2019 — Upton, NY</span>
+        <span>Machine Learning Intern | Jun 2019 – Aug 2019 | Upton, NY</span>
         <ul>
           <li>Created a PyTorch-based model for gold nanoparticle tracking with 98.78% accuracy, to support electric vehicle battery performance research.</li>
         </ul>
@@ -177,7 +230,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Matías Rosner</a>.
+    &copy; 2025 Matías Rosner
   </footer>
 </body>
 </html>
